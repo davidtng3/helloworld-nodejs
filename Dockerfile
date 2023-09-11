@@ -1,4 +1,4 @@
-FROM node:slim
+FROM node:alpine
 
 # Create app directory
 WORKDIR /usr/src/app
@@ -16,4 +16,5 @@ RUN npm ci --omit=dev
 COPY . .
 
 EXPOSE 8081
-CMD [ "node", "app1.js" ]
+ENTRYPOINT ["npm", "start"]
+
